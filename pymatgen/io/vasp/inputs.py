@@ -316,6 +316,7 @@ class Poscar(MSONable):
             Poscar object.
         """
         # "^\s*$" doesn't match lines with no whitespace
+        data = data.replace("/","")
         chunks = re.split(r"\n\s*\n", data.rstrip(), flags=re.MULTILINE)
         try:
             if chunks[0] == "":
